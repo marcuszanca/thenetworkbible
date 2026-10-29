@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guia visual de redes de computadores: fundamentos, switching, roteamento, Wi-Fi, segurança, monitoramento e troubleshooting.">
+  <meta name="theme-color" content="#10233f">
+  <title>Network Bible — Guia Visual de Redes</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Network Bible - página inicial">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="4"/><circle cx="8" cy="9" r="3"/><circle cx="32" cy="9" r="3"/><circle cx="8" cy="31" r="3"/><circle cx="32" cy="31" r="3"/><path d="M17 17 10 11M23 17l7-6M17 23l-7 6M23 23l7 6"/></svg></span>
+      <span><strong>Network Bible</strong><small>Guia Visual de Redes</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema">☼</button>
+      <button class="icon-btn mobile-menu-btn" id="menuToggle" type="button" aria-label="Abrir navegação" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="sidebar-label">EXPLORAR</div>
+      <button class="nav-item active" data-view="home"><span>⌂</span> Visão geral</button>
+      <button class="nav-item" data-view="map"><span>⌘</span> Mapa de conhecimento</button>
+      <button class="nav-item" data-view="modules"><span>▤</span> Todos os módulos</button>
+      <button class="nav-item" data-view="commands"><span>›_</span> Biblioteca de comandos</button>
+      <button class="nav-item" data-view="troubleshooting"><span>⌁</span> Troubleshooting</button>
+      <button class="nav-item" data-view="glossary"><span>ABC</span> Glossário</button>
+      <button class="nav-item" data-view="catalog"><span>▦</span> Equipamentos, ferramentas e cursos</button>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-label">TRILHAS DE APRENDIZADO</div>
+      <button class="nav-item" data-track="fundamentos"><span class="nav-dot blue"></span> Fundamentos</button>
+      <button class="nav-item" data-track="administracao"><span class="nav-dot green"></span> Administração</button>
+      <button class="nav-item" data-track="corporativa"><span class="nav-dot orange"></span> Infraestrutura corporativa</button>
+      <button class="nav-item" data-track="noc"><span class="nav-dot purple"></span> NOC e diagnóstico</button>
+      <div class="sidebar-footer"><span class="status-dot"></span> Base de conhecimento pública<br><small>Versão inicial · Conteúdo em expansão</small></div>
+    </aside>
+
+    <main id="main" class="main-content">
+      <section class="search-area" aria-label="Pesquisa global">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Pesquise VLAN, DNS, fibra, comandos..." autocomplete="off" aria-label="Pesquisar no guia">
+          <kbd>Enter</kbd>
+          <button id="clearSearch" class="clear-search" type="button" aria-label="Limpar pesquisa" hidden>×</button>
+        </div>
+        <div id="searchResults" class="search-results" hidden></div>
+      </section>
+
+      <section id="view-home" class="view active">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> CENTRAL DE CONHECIMENTO</div>
+            <h1>Entenda as redes.<br><span>Conecte as ideias.</span></h1>
+            <p>Um guia visual e prático para aprender redes de computadores do básico ao avançado — com conceitos, diagramas, comandos e caminhos de diagnóstico.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-go="map">Explorar mapa <span>↗</span></button>
+              <button class="btn btn-secondary" data-go="modules">Ver módulos</button>
+            </div>
+            <div class="hero-meta"><span>◉ 12 áreas de conhecimento</span><span>⌘ Teoria + prática</span><span>↗ Conteúdo aberto</span></div>
+          </div>
+          <div class="hero-visual" aria-label="Ilustração de uma rede conectada">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="network-line l1"></div><div class="network-line l2"></div><div class="network-line l3"></div><div class="network-line l4"></div><div class="network-line l5"></div><div class="network-line l6"></div>
+            <div class="network-node core"><span>⌘</span><small>NETWORK</small></div>
+            <div class="network-node node-a"><span>⇄</span><small>SWITCHING</small></div>
+            <div class="network-node node-b"><span>↗</span><small>ROUTING</small></div>
+            <div class="network-node node-c"><span>⌁</span><small>WI-FI</small></div>
+            <div class="network-node node-d"><span>◇</span><small>SECURITY</small></div>
+            <div class="network-node node-e"><span>▥</span><small>MONITOR</small></div>
+            <div class="visual-caption"><span class="pulse"></span> Conhecimento conectado</div>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><div class="eyebrow">COMECE POR AQUI</div><h2>Explore por área</h2><p>Escolha um tema para abrir seus conceitos e materiais.</p></div>
+          <button class="text-link" data-go="modules">Todos os módulos <span>→</span></button>
+        </div>
+        <div id="featuredModules" class="module-grid"></div>
+
+        <div class="section-heading section-heading-spaced">
+          <div><div class="eyebrow">APRENDIZADO GUIADO</div><h2>Trilhas recomendadas</h2><p>Sequências organizadas para desenvolver conhecimento passo a passo.</p></div>
+        </div>
+        <div class="track-grid">
+          <button class="track-card" data-track="fundamentos"><span class="track-icon blue">01</span><span class="track-content"><strong>Fundamentos de redes</strong><small>OSI, TCP/IP, Ethernet e IP</small><span class="track-level">INICIANTE · 6 ETAPAS</span></span><span class="arrow">↗</span></button>
+          <button class="track-card" data-track="administracao"><span class="track-icon green">02</span><span class="track-content"><strong>Administração de redes</strong><small>VLANs, roteamento e serviços</small><span class="track-level">INTERMEDIÁRIO · 7 ETAPAS</span></span><span class="arrow">↗</span></button>
+          <button class="track-card" data-track="corporativa"><span class="track-icon orange">03</span><span class="track-content"><strong>Infraestrutura corporativa</strong><small>Core, fibra, redundância e WAN</small><span class="track-level">AVANÇADO · 6 ETAPAS</span></span><span class="arrow">↗</span></button>
+          <button class="track-card" data-track="noc"><span class="track-icon purple">04</span><span class="track-content"><strong>NOC e troubleshooting</strong><small>Monitoramento e análise de falhas</small><span class="track-level">PRÁTICA · 6 ETAPAS</span></span><span class="arrow">↗</span></button>
+        </div>
+
+        <div class="callout">
+          <div class="callout-icon">⌁</div><div><strong>Aprenda pelo problema</strong><p>Já sabe o que está errado? Abra Troubleshooting para organizar hipóteses, testes e próximos passos.</p></div><button class="btn btn-secondary" data-go="troubleshooting">Diagnosticar <span>→</span></button>
+        </div>
+      </section>
+
+      <section id="view-map" class="view">
+        <div class="page-heading"><div><div class="eyebrow">VISÃO GERAL INTERATIVA</div><h1>Mapa de conhecimento</h1><p>Explore a estrutura de redes e siga as conexões entre os conceitos.</p></div><button class="btn btn-secondary" id="resetMap">↺ Redefinir mapa</button></div>
+        <div class="map-toolbar">
+          <label class="filter-label" for="mapFilter">Área em foco</label>
+          <select id="mapFilter"><option value="all">Todos os módulos</option></select>
+          <span class="toolbar-spacer"></span>
+          <button class="icon-btn" id="zoomOut" aria-label="Diminuir zoom">−</button><button class="icon-btn" id="zoomIn" aria-label="Aumentar zoom">+</button>
+          <button class="icon-btn" id="fitMap" aria-label="Centralizar mapa">⌖</button>
+          <button class="icon-btn" id="toggleList" aria-pressed="false" title="Alternar árvore/lista">☷</button>
+        </div>
+        <div class="map-layout">
+          <div class="map-canvas" id="mapCanvas">
+            <svg id="mapSvg" role="img" aria-label="Mapa interativo de módulos de redes de computadores"></svg>
+            <div class="map-legend"><span><i class="legend-dot root"></i>Raiz</span><span><i class="legend-dot module"></i>Módulo</span><span><i class="legend-line"></i>Relação cruzada</span></div>
+          </div>
+          <aside class="node-detail" id="nodeDetail"><div class="detail-empty"><span class="detail-symbol">⌘</span><h3>Explore o mapa</h3><p>Selecione um módulo ou conceito para ver o resumo, o nível e os tópicos relacionados.</p></div></aside>
+        </div>
+        <div id="mapList" class="map-list" hidden></div>
+      </section>
+
+      <section id="view-modules" class="view">
+        <div class="page-heading"><div><div class="eyebrow">BASE DE CONHECIMENTO</div><h1>Todos os módulos</h1><p>Uma visão organizada das principais áreas de redes de computadores.</p></div></div>
+        <div class="module-toolbar"><input id="moduleSearch" type="search" placeholder="Filtrar módulos..." aria-label="Filtrar módulos"><select id="levelFilter" aria-label="Filtrar por nível"><option value="all">Todos os níveis</option><option value="Iniciante">Iniciante</option><option value="Intermediário">Intermediário</option><option value="Avançado">Avançado</option></select></div>
+        <div id="allModules" class="module-grid all-modules"></div>
+      </section>
+
+      <section id="view-module" class="view"><div id="modulePage"></div></section>
+
+      <section id="view-catalog" class="view"><div class="page-heading"><div><div class="eyebrow">DIRETÓRIO DE REFERÊNCIA</div><h1>Equipamentos, ferramentas e cursos</h1><p>Catálogo inicial com links para fabricantes, documentação, ferramentas e plataformas de formação. Os links levam às páginas oficiais quando disponíveis.</p></div></div><div class="module-toolbar"><input id="catalogSearch" type="search" placeholder="Buscar equipamento, fabricante, ferramenta ou curso..."></div><div id="catalogList" class="module-grid"></div></section>
+
+      <section id="view-article" class="view">
+        <div class="breadcrumbs" id="breadcrumbs"><button data-go="home">Início</button><span>›</span><span>Conteúdo</span></div>
+        <article id="articleContent" class="article-layout"></article>
+      </section>
+
+      <section id="view-commands" class="view">
+        <div class="page-heading"><div><div class="eyebrow">CONSULTA RÁPIDA</div><h1>Biblioteca de comandos</h1><p>Comandos úteis para investigação e validação de conectividade.</p></div></div>
+        <div class="notice"><strong>Importante:</strong> exemplos destinados a consulta. A sintaxe varia por sistema operacional, fabricante e versão. Execute comandos em equipamentos operacionais somente conforme os procedimentos autorizados.</div>
+        <div class="module-toolbar"><input id="commandSearch" type="search" placeholder="Buscar comando ou finalidade..." aria-label="Buscar comandos"><select id="commandPlatform" aria-label="Filtrar plataforma"><option value="all">Todas as plataformas</option><option>Windows</option><option>Linux</option><option>Cisco IOS</option></select></div>
+        <div id="commandList" class="command-list"></div>
+      </section>
+
+      <section id="view-troubleshooting" class="view">
+        <div class="page-heading"><div><div class="eyebrow">DIAGNÓSTICO SISTEMÁTICO</div><h1>Troubleshooting</h1><p>Comece pelo sintoma, valide hipóteses e avance do mais simples ao mais específico.</p></div></div>
+        <div class="notice"><strong>Princípio:</strong> colete evidências antes de alterar configurações. Em ambiente de produção, priorize comandos de consulta e siga o processo de mudança da organização.</div>
+        <div id="troubleList" class="trouble-grid"></div>
+      </section>
+
+      <section id="view-glossary" class="view">
+        <div class="page-heading"><div><div class="eyebrow">VOCABULÁRIO TÉCNICO</div><h1>Glossário de redes</h1><p>Siglas e conceitos essenciais, com definições curtas e referências para aprofundar.</p></div></div>
+        <div class="module-toolbar"><input id="glossarySearch" type="search" placeholder="Buscar sigla ou termo..." aria-label="Buscar no glossário"></div>
+        <div id="glossaryList" class="glossary-list"></div>
+      </section>
+
+      <section id="view-track" class="view">
+        <div class="breadcrumbs"><button data-go="home">Início</button><span>›</span><span>Trilha de aprendizado</span></div>
+        <div id="trackContent"></div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-brand"><span class="brand-mark small"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="4"/><circle cx="8" cy="9" r="3"/><circle cx="32" cy="9" r="3"/><circle cx="8" cy="31" r="3"/><circle cx="32" cy="31" r="3"/><path d="M17 17 10 11M23 17l7-6M17 23l-7 6M23 23l7 6"/></svg></span><strong>Network Bible</strong></div>
+        <p>Guia aberto para aprender, consultar e conectar conhecimentos sobre redes.</p>
+        <div class="footer-links"><a href="https://www.rfc-editor.org/" target="_blank" rel="noopener">RFC Editor ↗</a><a href="https://www.cisco.com/c/en/us/support/index.html" target="_blank" rel="noopener">Cisco Support ↗</a><a href="https://www.cloudflare.com/learning/" target="_blank" rel="noopener">Cloudflare Learning ↗</a></div>
+        <small>Conteúdo educacional. Verifique a documentação oficial antes de aplicar mudanças em ambientes reais.</small>
+      </footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="expansion.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
